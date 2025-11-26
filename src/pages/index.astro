@@ -14,6 +14,7 @@ import BlockTwo from "../components/home/BlockTwo.astro";
 import IconGlobal from "../components/global/IconGlobal";
 import ColorPalette from "../components/home/ColorPalette.astro";
 import HighlightedText from "../components/global/TitleColor";
+import UseTextHidden from "../hooks/UseTextHidden";
 
 let API_URL = import.meta.env.API_URL;
 // Realiza la llamada a la API
@@ -53,7 +54,7 @@ const aboutSection = data?.sectionsHomeAbout.filter(
       <h2
         class="text-center md:text-[60px] text-[30px] font-bold text-primary-500"
       >
-        Our Services
+        <UseTextHidden text="Our Services" client:load />
       </h2>
       <h2
         class="md:text-[40px] text-[25px] mb-2 font-bold text-center text-secondary"
@@ -74,7 +75,7 @@ const aboutSection = data?.sectionsHomeAbout.filter(
     data.reviews.viewHome ? (
       <div class="md:w-[75%] mx-auto w-[95%] md:py-24 py-10 flex justify-center flex-col text-center">
         <h2 class="text-3xl font-bold text-gray-800 py-4">
-          What our customers say
+          <UseTextHidden text="What Our Customers Say" client:load />
         </h2>
         <review-widget widgetId={data.reviews.urlReviews} />
       </div>

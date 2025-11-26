@@ -1,5 +1,6 @@
 ---
 import FormatText from "../../hooks/FormatText";
+import UseTextHidden from "../../hooks/UseTextHidden";
 import type { RootObject, SectionsHomeAbout } from "../../interfaces/dbData";
 import IconGlobal from "../global/IconGlobal";
 import HighlightedText from "../global/TitleColor";
@@ -44,7 +45,7 @@ const year = new Date().getFullYear();
     >
       <!-- Newsletter -->
       <div class="w-full mb-6 md:p-4 p-2 relative">
-        <h3 class="text-[20px] font-bold text-primary mb-3">Services</h3>
+        <h3 class="text-[20px] font-bold text-primary mb-3"><UseTextHidden text="Services" client:load /></h3>
         <div class="grid grid-cols-2 gap-2 text-white">
           {
             data.services.slice(0, 8).map((service) => (
@@ -69,7 +70,7 @@ const year = new Date().getFullYear();
       <!-- Official Info -->
       <div class="w-full mb-6 md:p-4 p-2 relative">
         <h3 class="text-[20px] font-bold text-primary mb-3">
-          Official Info:
+          <UseTextHidden text="Official Info" client:load />
         </h3>
         <ul>
           {
@@ -81,7 +82,9 @@ const year = new Date().getFullYear();
                   href={`mailto:${email.email}`}
                   class="flex flex-col text-white"
                 >
-                  <span class="font-bold">Email</span>
+                  <span class="font-bold">
+                    <UseTextHidden text="Email" client:load />
+                  </span>
                   <span>{email.email}</span>
                 </a>
               </li>
@@ -97,7 +100,9 @@ const year = new Date().getFullYear();
               <li class="mb-2 flex gap-2 items-center">
                 <i class="fas fa-location text-white mr-2 bg-primary p-1 text-[20px] rounded-md" />
                 <span class="flex flex-col text-white">
-                  <span class="font-bold">Location</span>
+                  <span class="font-bold">
+                    <UseTextHidden text="Location" client:load />
+                  </span>
                   <span>{phone.city}</span>
                 </span>
               </li>
@@ -112,7 +117,9 @@ const year = new Date().getFullYear();
                   href={`tel:+1${phone.number}`}
                   class="flex flex-col text-white"
                 >
-                  <span class="font-bold">Phone</span>
+                  <span class="font-bold">
+                    <UseTextHidden text="Phone" client:load />
+                  </span>
                   <span>{phone.number}</span>
                 </a>
               </li>
@@ -136,7 +143,9 @@ const year = new Date().getFullYear();
 
       <!-- Gallery -->
       <div class="w-full mb-6 md:p-4 p-2">
-        <h3 class="text-[20px] font-bold text-primary mb-3">Gallery</h3>
+        <h3 class="text-[20px] font-bold text-primary mb-3">
+          <UseTextHidden text="Gallery" client:load />
+        </h3>
         <GalleryFooter data={data} client:load />
       </div>
     </div>
@@ -148,7 +157,7 @@ const year = new Date().getFullYear();
       <div>
         <p class="text-center text-white
       text-[20px] font-bold">
-          © {year} All rights reserved by {data.name}
+          © {year} <UseTextHidden text="All rights reserved by" client:load/> {data.name}
         </p>
       </div>
       <div>

@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import TransparentHeader from "../components/global/TransparentHeader.astro";
 import Map from "../components/contact/Map";
 import ButtonContent from "../components/buttons/Buttons";
+import UseTextHidden from "../hooks/UseTextHidden";
 
 let API_URL = import.meta.env.API_URL;
 // Realiza la llamada a la API
@@ -30,7 +31,7 @@ const dataBlocks = data?.sectionsHomeAbout.filter(
       <h2
         class="text-5xl font-bold text-center text-primaryColor border-l-[8px] pl-2 border-primary"
       >
-        Our Services
+        <UseTextHidden text="Our Services" client:load />
       </h2>
       <h3
         class="text-3xl font-bold text-center text-primaryColor mt-4 capitalize"

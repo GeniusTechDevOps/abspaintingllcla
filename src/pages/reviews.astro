@@ -1,5 +1,6 @@
 ---
 import TransparentHeader from "../components/global/TransparentHeader.astro";
+import UseTextHidden from "../hooks/UseTextHidden";
 import type { RootObject, SectionsHomeAbout } from "../interfaces/dbData";
 import Layout from "../layouts/Layout.astro";
 
@@ -27,7 +28,7 @@ const dataBlocks = data?.sectionsHomeAbout.filter(
     class="md:w-[75%] mx-auto w-[95%] md:py-24 py-10 flex justify-center flex-col text-center"
   >
     <h2 class="text-3xl font-bold text-gray-800 py-4">
-      What our customers say
+      <UseTextHidden text="What Our Customers Say" client:load />
     </h2>
     <review-widget widgetId={data.reviews.urlReviews}></review-widget>
   </div>

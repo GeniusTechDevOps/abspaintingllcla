@@ -11,6 +11,7 @@ import DetailValues from "../../components/services/DetailValues.astro";
 import Map from "../../components/contact/Map";
 import FormatText from "../../hooks/FormatText";
 import Form from "../../components/contact/Form";
+import UseTextHidden from "../../hooks/UseTextHidden";
 const { id } = Astro.params;
 
 let API_URL = import.meta.env.API_URL;
@@ -50,7 +51,7 @@ const service = data.services.find(
         <h2
           class="text-2xl font-bold py-4 px-4 bg-primary text-primary text-white"
         >
-          Our services
+          <UseTextHidden text="Our Services" client:load />
         </h2>
         {
           data.services.map((service) => (

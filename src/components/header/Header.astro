@@ -4,6 +4,7 @@ import type { RootObject } from "../../interfaces/dbData.ts";
 import MenuMobile from "../headerComponents/MenuMobile.tsx";
 import ToggleButton from "../global/ToggleButton.tsx";
 import IconGlobal from "../global/IconGlobal";
+import UseTextHidden from "../../hooks/UseTextHidden";
 let API_URL = import.meta.env.API_URL;
 // Realiza la llamada a la API
 const response = await fetch(`${API_URL}`);
@@ -78,7 +79,7 @@ const data: RootObject = await response.json();
                       class="font-bold text-[18px] text-secondary"
                       
                     >
-                      Location
+                      <UseTextHidden text="Location" client:load />
                     </span>
                     <span>{item.city}</span>
                   </div>

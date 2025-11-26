@@ -5,6 +5,7 @@ import ContactComponent from "../components/contact/contact.astro";
 import ContactForm from "../components/contact/Form";
 import MapComponent from "../components/contact/Map.tsx";
 import TransparentHeader from "../components/global/TransparentHeader.astro";
+import UseTextHidden from "../hooks/UseTextHidden";
 
 
 let API_URL = import.meta.env.API_URL;
@@ -28,13 +29,17 @@ const dataBlocks = data?.sectionsHomeAbout.filter(
 <TransparentHeader title="Contact Us" image={dataBlocks[4].additionalImages[0]} />
   <section class="flex md:flex-row flex-col md:w-[70%] mx-auto w-[90%] md:mt-24 mt-10">
     <div class="md:w-[50%] flex flex-col md:p-6">
-      <h2 class="text-3xl font-bold mb-4">Get In Touch!</h2>
+      <h2 class="text-3xl font-bold mb-4">
+        <UseTextHidden text="Get in Touch!" client:load />
+      </h2>
       <ContactForm data={data}
       client:load
       />
     </div>
     <div class="md:w-[50%] flex flex-col md:p-6">
-      <h2 class="text-3xl font-bold mb-4">Contact Info</h2>
+      <h2 class="text-3xl font-bold mb-4">
+        <UseTextHidden text="Contact Info" client:load />
+      </h2>
       <ContactComponent data={data} />
     </div>
   </section>

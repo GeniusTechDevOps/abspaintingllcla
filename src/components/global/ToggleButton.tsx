@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Form from "../contact/Form";
 import type { RootObject } from "../../interfaces/dbData";
+import UseTextHidden from "../../hooks/UseTextHidden";
 
 interface ToggleButtonProps {
   data: RootObject;
@@ -19,7 +20,7 @@ const ToggleButton = ({ data }: ToggleButtonProps) => {
           backgroundColor: data.colors.primaryColor,
         }}
       >
-        <span className="text-[14px] font-bold">Request a Quote</span>
+        <span className="text-[14px] font-bold"><UseTextHidden text="Request a Quote"/></span>
         <i className="fas fa-file-signature text-2xl cursor-pointer p-2 rounded-md" aria-hidden={true}></i>
       </div>
 
@@ -52,7 +53,7 @@ const ToggleButton = ({ data }: ToggleButtonProps) => {
             className="w-[200px] mx-auto"
           />
           <h1 className="mt-4 text-[20px] font-bold text-gray-800">
-            Request a Quote
+            <UseTextHidden text="Get a Free Quote"/>
           </h1>
           <Form data={data} />
         </div>

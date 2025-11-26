@@ -1,3 +1,5 @@
+import UseTextHidden from "../../hooks/UseTextHidden";
+
 interface DirectoriosProps {
   data: any;
 }
@@ -47,7 +49,7 @@ const Directorios: React.FC<DirectoriosProps> = ({
       )}
       <div>
         <h2 className="md:text-[45px] text-[30px] font-bold text-center text-gray-800">
-          Find Us On
+          <UseTextHidden text="Find Us On" />
         </h2>
       </div>
       <div className="flex flex-wrap justify-center items-center gap-4">

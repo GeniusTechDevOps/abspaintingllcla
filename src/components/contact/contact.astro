@@ -1,4 +1,5 @@
 ---
+import UseTextHidden from "../../hooks/UseTextHidden";
 import type { RootObject } from "../../interfaces/dbData";
 interface Props {
   data: RootObject;
@@ -19,7 +20,9 @@ const { data } = Astro.props;
         </div>
       </div>
       <div class="ml-6 grow flex flex-col">
-        <p class="mb-2 font-bold">Call Us Now!</p>
+        <p class="mb-2 font-bold">
+          <UseTextHidden text="Call Us Now!" client:load />
+        </p>
         <div class="flex flex-col gap-2">
           {
             data.dataGeneral?.phones?.map((item) => (
@@ -46,7 +49,9 @@ const { data } = Astro.props;
         </div>
       </div>
       <div class="ml-6 grow">
-        <p class="mb-2 font-bold">Location</p>
+        <p class="mb-2 font-bold"></p>
+          <UseTextHidden text="Location" client:load />
+        </p>
         <div class="flex flex-col gap-2">
           {
             data.dataGeneral?.location.slice(0, 1).map((item) => (
@@ -96,7 +101,9 @@ const { data } = Astro.props;
         </div>
       </div>
       <div class="ml-6 grow">
-        <p class="mb-2 font-bold">Email Us!</p>
+        <p class="mb-2 font-bold">
+          <UseTextHidden text="Email Us!" client:load />
+        </p>
         <div class="flex flex-col gap-2">
           {
             data.dataGeneral?.emails?.map((item) => (

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { RootObject } from "../../interfaces/dbData";
 import { motion, type Variants, AnimatePresence } from "framer-motion";
+import UseTextHidden from "../../hooks/UseTextHidden";
 
 interface BusinessCardProps {
     data: RootObject;
@@ -74,7 +75,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ data }) => {
                             </div>
                             <div className="w-full md:w-3/5 h-full flex flex-col justify-center items-start -scale-x-100 px-0 md:px-2 py-3 relative z-50 pb-20 md:pb-0">
                                 <h2 className="text-lg md:text-2xl font-black text-white md:text-white text-end px-2 py-2">
-                                    Our Services:
+                                    <UseTextHidden text="Our Services:" />
                                 </h2>
                                 {
                                     data.services.slice(0, 6).map((service, index) => (

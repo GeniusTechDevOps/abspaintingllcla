@@ -1,6 +1,7 @@
 ---
 import TransparentHeader from "../components/global/TransparentHeader.astro";
 import GalleryItem from "../components/portfolio/Portolio";
+import UseTextHidden from "../hooks/UseTextHidden";
 import type { RootObject, SectionsHomeAbout } from "../interfaces/dbData";
 import Layout from "../layouts/Layout.astro";
 
@@ -28,7 +29,7 @@ const dataBlocks = data?.sectionsHomeAbout.filter(
   >
     <span
       class="text-[30px] md:text-[40px] font-bold text-[#1D1D1D] text-center py-8"
-      >Our Recent Works</span
+      ><UseTextHidden text="Our Recent Works" client:load /></span
     >
 
     {

@@ -1,3 +1,4 @@
+import UseTextHidden from "../../hooks/UseTextHidden";
 import type { RootObject } from "../../interfaces/dbData";
 import CardServicesTwo from "./CardServicesTwo";
 
@@ -13,7 +14,7 @@ const ContentServicesHome: React.FC<ContentServicesHomeProps> = (
       <div className="md:w-[70%] mx-auto w-[95%] md:py-24 py-4">
         <div className="flex justify-center flex-col items-center mb-6 text-center">
           <div className="flex items-center gap-4">
-            <span className="text-5xl font-bold">Our Services</span>
+            <span className="text-5xl font-bold"><UseTextHidden text="Our Services"/></span>
           </div>
           <h2 className="text-3xl font-bold">
             We Provide The Necessary Services To You

@@ -1,4 +1,5 @@
 ---
+import UseTextHidden from "../../hooks/UseTextHidden";
 import type { RootObject } from "../../interfaces/dbData";
 interface Props {
   data: RootObject;
@@ -48,7 +49,7 @@ const { data } = Astro.props;
           <h2
             class="py-3 pl-2 mb-4 text-2xl font-bold border-l-4 text-gray-300 border-white"
           >
-            mission
+            <UseTextHidden text="Mission" client:load />
           </h2>
           <p class="mb-4 text-base leading-7 text-white">
             {data.valuesContent.mission}

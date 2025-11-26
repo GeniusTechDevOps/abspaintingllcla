@@ -2,6 +2,7 @@
 import type { RootObject } from "../../interfaces/dbData";
 import ButtonContent from "../buttons/Buttons";
 import HighlightedText from "../global/TitleColor";
+import UseTextHidden from "../../hooks/UseTextHidden";
 interface Props {
   data: RootObject;
 }
@@ -37,7 +38,7 @@ const { data } = Astro.props;
             ></path>
           </svg>
         </div>
-        <h2 class="mb-4 text-2xl font-bold text-white">Mission</h2>
+        <h2 class="mb-4 text-2xl font-bold text-white"><UseTextHidden text="Mission" client:load /></h2>
         <p class="text-base text-white">
           {data.valuesContent.mission}
         </p>
@@ -60,7 +61,7 @@ const { data } = Astro.props;
             ></path>
           </svg>
         </div>
-        <h2 class="mb-4 text-2xl font-semibold text-white">Vision</h2>
+        <h2 class="mb-4 text-2xl font-semibold text-white"><UseTextHidden text="Vision" client:load /></h2>
         <p class="text-base text-white">
           {data.valuesContent.vision}
         </p>
@@ -83,7 +84,7 @@ const { data } = Astro.props;
             ></path></svg
           >
         </div>
-        <h2 class="mb-4 text-2xl font-bold text-white">Why Choose Us</h2>
+        <h2 class="mb-4 text-2xl font-bold text-white"><UseTextHidden text="Why Choose Us" client:load /></h2>
         <p class="text-base text-white">
           {data.valuesContent.whychooseUs}
         </p>
