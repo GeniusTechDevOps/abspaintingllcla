@@ -83,6 +83,12 @@ export default function Menu({
       icon: "Blog",
       statusRoutes: data?.widgets?.blog && data.blog?.blog,
     },
+        {
+      name: "Reviews",
+      path: "/reviews",
+      icon: "Reviews",
+      statusRoutes: data?.reviews?.stateReviews && data.reviews?.viewAll,
+    },
     {
       name: "Contact",
       path: "/contact",
