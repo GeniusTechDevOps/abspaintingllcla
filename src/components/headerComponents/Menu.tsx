@@ -70,11 +70,7 @@ export default function Menu({
       subitems: category.services, // lista de servicios
       submenu: category.subMenu,
     })),
-    {
-      name: "Reviews",
-      path: "/reviews",
-      icon: "Reviews",
-    },
+
     {
       name: "Videos",
       path: "/videos",
